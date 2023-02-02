@@ -60,7 +60,7 @@ session_start();
                                     <tr>
                                         <td>
                                             <?php
-                                            $uang_bulanan = "4600000";
+                                            $uang_bulanan = "3100000";
                                             echo "Rp " . number_format($uang_bulanan, 0, ",", ".") . "";
                                             ?>
                                         </td>
