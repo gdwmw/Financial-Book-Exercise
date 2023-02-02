@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$query = "SELECT * FROM transaksi ORDER BY id ASC";
+$query = "SELECT * FROM transaksi ORDER BY tanggal ASC";
 $result = mysqli_query($conn, $query);
 $no = 1;
 while ($row = mysqli_fetch_array($result)) {
