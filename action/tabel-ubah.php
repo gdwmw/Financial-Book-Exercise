@@ -52,11 +52,29 @@
                                             echo "<select class='form-select mb-3' name='warna' required>
                                             <option value='Hitam'>Hitam</option>
                                             <option value='Biru' selected>Biru</option>
+                                            <option value='Hijau'>Hijau</option>
+                                            <option value='Merah'>Merah</option>
+                                        </select>";
+                                        } elseif ($row['warna'] === 'Hijau') {
+                                            echo "<select class='form-select mb-3' name='warna' required>
+                                            <option value='Hitam'>Hitam</option>
+                                            <option value='Biru'>Biru</option>
+                                            <option value='Hijau' selected>Hijau</option>
+                                            <option value='Merah'>Merah</option>
+                                        </select>";
+                                        } elseif ($row['warna'] === 'Merah') {
+                                            echo "<select class='form-select mb-3' name='warna' required>
+                                            <option value='Hitam'>Hitam</option>
+                                            <option value='Biru'>Biru</option>
+                                            <option value='Hijau'>Hijau</option>
+                                            <option value='Merah' selected>Merah</option>
                                         </select>";
                                         } else {
                                             echo "<select class='form-select mb-3' name='warna' required>
                                             <option value='Hitam' selected>Hitam</option>
                                             <option value='Biru'>Biru</option>
+                                            <option value='Hijau'>Hijau</option>
+                                            <option value='Merah'>Merah</option>
                                         </select>";
                                         }
                                         ?>
@@ -70,18 +88,117 @@
                                         <div class="input-group mb-3">
                                             <select class="form-select" name="tipe" required>
                                                 <?php
+                                                $tipe0 = $row['tipe'];
                                                 if ($row['tipe'] == "Keluar") {
-                                                    echo '<option value="Keluar" selected>Keluar</option>';
-                                                    echo '<option value="Masuk">Masuk</option>';
-                                                    echo '<option value="Catatan">Catatan</option>';
+                                                    echo '<option value="Keluar" selected>Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
                                                 } elseif ($row['tipe'] == "Masuk") {
-                                                    echo '<option value="Keluar">Keluar</option>';
-                                                    echo '<option value="Masuk" selected>Masuk</option>';
-                                                    echo '<option value="Catatan">Catatan</option>';
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk" selected>Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "WiFi") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi" selected>WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Listrik") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik" selected>Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Gas") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas" selected>Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Beras") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras" selected>Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Griya") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya" selected>Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Belanja Mingguan") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan" selected>Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
+                                                } elseif ($row['tipe'] == "Aqua Galon") {
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon" selected>Aqua Galon</option>
+                                                    <option value="Aqua Cup">Aqua Cup</option>';
                                                 } else {
-                                                    echo '<option value="Keluar">Keluar</option>';
-                                                    echo '<option value="Masuk">Masuk</option>';
-                                                    echo '<option value="Catatan" selected>Catatan</option>';
+                                                    echo '<option value="Keluar">Keluar</option>
+                                                    <option value="Masuk">Masuk</option>
+                                                    <option value="WiFi">WiFi</option>
+                                                    <option value="Listrik">Listrik</option>
+                                                    <option value="Gas">Gas</option>
+                                                    <option value="Beras">Beras</option>
+                                                    <option value="Griya">Griya</option>
+                                                    <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                                    <option value="Aqua Galon">Aqua Galon</option>
+                                                    <option value="Aqua Cup" selected>Aqua Cup</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -112,22 +229,45 @@
 <?php
 include 'config.php';
 if (isset($_POST['submit-ubah'])) {
+    $query0 = "UPDATE bulanan SET terpakai='0' WHERE tipe='$tipe0'";
+    mysqli_query($conn, $query0);
     $id = $_POST['id'];
     $tanggal = $_POST['tanggal'];
     $jumlah = $_POST['jumlah'];
     $warna = $_POST['warna'];
     $keterangan = $_POST['keterangan'];
     $tipe = $_POST['tipe'];
-    $sql = "UPDATE transaksi SET tanggal='$tanggal', jumlah='$jumlah', warna='$warna', keterangan='$keterangan', tipe='$tipe' WHERE id=$id";
-    if (mysqli_query($conn, $sql)) {
+    $query01 = "UPDATE transaksi SET tanggal='$tanggal', jumlah='$jumlah', warna='$warna', keterangan='$keterangan', tipe='$tipe' WHERE id=$id";
+    if (!mysqli_query($conn, $query01)) {
         echo "<script>
-    document.location.href='../page/tabel.php';
-    </script>";
+                alert('Data gagal diubah!');
+                document.location.href='../page/tabel.php';
+                </script>";
+    }
+    if ($tipe === 'Keluar') {
+        echo "<script>
+        document.location.href='../page/tabel.php';
+        </script>";
+    } elseif ($tipe === 'Masuk') {
+        echo "<script>
+        document.location.href='../page/tabel.php';
+        </script>";
     } else {
-        echo "<script>
-    alert('Data gagal diubah!');
-    document.location.href='../page/tabel.php';
-    </script>";
+        $query02 = "SELECT SUM(jumlah) as total_jumlah FROM transaksi WHERE tipe='$tipe'";
+        $result02 = mysqli_query($conn, $query02);
+        $row02 = mysqli_fetch_array($result02);
+        $terpakai = $row02['total_jumlah'];
+        $query03 = "UPDATE bulanan SET terpakai='$terpakai' WHERE tipe='$tipe'";
+        if (mysqli_query($conn, $query03)) {
+            echo "<script>
+                        document.location.href='../page/tabel.php';
+                        </script>";
+        } else {
+            echo "<script>
+                        alert('Data gagal diubah!');
+                        document.location.href='../page/tabel.php';
+                        </script>";
+        }
     }
 }
 mysqli_close($conn);

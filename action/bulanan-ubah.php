@@ -55,12 +55,12 @@
                                                 disabled>
                                             <input type="hidden" name="terpakai" value="<?php echo $row['terpakai']; ?>">
                                         </div>
-                                        <label for="tambah" class="form-label">Tambah :</label>
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text">Rp</span>
-                                            <input type="number" name="tambah" class="form-control"
-                                                placeholder="Tulis tambah..." value="000" required>
-                                        </div>
+                                        <!-- <label for="tambah" class="form-label">Tambah :</label>
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text">Rp</span>
+                                                            <input type="number" name="tambah" class="form-control"
+                                                                placeholder="Tulis tambah..." value="000" required>
+                                                        </div> -->
                                         <button type="submit" name="bulanan-ubah" class="btn btn-primary">Ubah</button>
                                         <a class="btn btn-danger" onclick="batal()">Batal</a>
                                     </form>
@@ -88,10 +88,10 @@ if (isset($_POST['bulanan-ubah'])) {
     $id = $_POST['id'];
     $keterangan = $_POST['keterangan'];
     $anggaran = $_POST['anggaran'];
-    $tambah = $_POST['tambah'];
-    $terpakai = $_POST['terpakai'];
-    $sum = $terpakai + $tambah;
-    $query = "UPDATE bulanan SET keterangan='$keterangan', anggaran='$anggaran',terpakai='$sum' WHERE id=$id";
+    // $tambah = $_POST['tambah'];
+    // $terpakai = $_POST['terpakai'];
+    // $sum = $terpakai + $tambah;
+    $query = "UPDATE bulanan SET keterangan='$keterangan', anggaran='$anggaran' WHERE id=$id";
     if (mysqli_query($conn, $query)) {
         echo "<script>
     document.location.href='../page/bulanan.php';

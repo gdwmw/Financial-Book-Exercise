@@ -53,6 +53,8 @@
                                 <select class="form-select mb-3" name="warna" required>
                                     <option value="Hitam">Hitam</option>
                                     <option value="Biru">Biru</option>
+                                    <option value="Hijau">Hijau</option>
+                                    <option value="Merah">Merah</option>
                                 </select>
                                 <div class="mb-3">
                                     <label for="keterangan" class="form-label">Keterangan :</label>
@@ -64,7 +66,14 @@
                                     <select class="form-select" name="tipe" required>
                                         <option value="Keluar">Keluar</option>
                                         <option value="Masuk">Masuk</option>
-                                        <option value="Catatan">Catatan</option>
+                                        <option value="WiFi">WiFi</option>
+                                        <option value="Listrik">Listrik</option>
+                                        <option value="Gas">Gas</option>
+                                        <option value="Beras">Beras</option>
+                                        <option value="Griya">Griya</option>
+                                        <option value="Belanja Mingguan">Belanja Mingguan</option>
+                                        <option value="Aqua Galon">Aqua Galon</option>
+                                        <option value="Aqua Cup">Aqua Cup</option>
                                     </select>
                                 </div> <button class="btn btn-primary" type="submit" name="submit">Simpan</button>
                             </form>
@@ -86,16 +95,37 @@ if (isset($_POST['submit'])) {
     $warna = $_POST['warna'];
     $keterangan = htmlspecialchars($_POST['keterangan']);
     $tipe = $_POST['tipe'];
-    $query = "INSERT INTO transaksi (tanggal, jumlah, warna, keterangan, tipe) VALUES ('$tanggal', '$jumlah', '$warna','$keterangan', '$tipe')";
-    if (mysqli_query($conn, $query)) {
-        echo "<script>
-                document.location.href='tambah.php';
-                </script>";
-    } else {
+    $query01 = "INSERT INTO transaksi (tanggal, jumlah, warna, keterangan, tipe) VALUES ('$tanggal', '$jumlah', '$warna','$keterangan', '$tipe')";
+    if (!mysqli_query($conn, $query01)) {
         echo "<script>
                 alert('Data gagal disimpan!');
                 document.location.href='tambah.php';
                 </script>";
+    }
+    if ($tipe === 'Keluar') {
+        echo "<script>
+        document.location.href='tambah.php';
+        </script>";
+    } elseif ($tipe === 'Masuk') {
+        echo "<script>
+        document.location.href='tambah.php';
+        </script>";
+    } else {
+        $query02 = "SELECT SUM(jumlah) as total_jumlah FROM transaksi WHERE tipe='$tipe'";
+        $result = mysqli_query($conn, $query02);
+        $row = mysqli_fetch_array($result);
+        $terpakai = $row['total_jumlah'];
+        $query03 = "UPDATE bulanan SET terpakai='$terpakai' WHERE tipe='$tipe'";
+        if (mysqli_query($conn, $query03)) {
+            echo "<script>
+                        document.location.href='tambah.php';
+                        </script>";
+        } else {
+            echo "<script>
+                        alert('Data gagal diubah!');
+                        document.location.href='tambah.php';
+                        </script>";
+        }
     }
 }
 mysqli_close($conn);

@@ -8,7 +8,11 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<th scope='row'>" . $no . "</th>";
     echo "<td>" . $row['tanggal'] . "</td>";
     if ($row['warna'] === 'Biru') {
-        echo "<td style='color: #0000FF;'>" . "Rp " . number_format($row['jumlah'], 0, ",", ".") . "</td>";
+        echo "<td style='color: blue;'>" . "Rp " . number_format($row['jumlah'], 0, ",", ".") . "</td>";
+    } elseif ($row['warna'] === 'Hijau') {
+        echo "<td style='color: green;'>" . "Rp " . number_format($row['jumlah'], 0, ",", ".") . "</td>";
+    } elseif ($row['warna'] === 'Merah') {
+        echo "<td style='color: red;'>" . "Rp " . number_format($row['jumlah'], 0, ",", ".") . "</td>";
     } else {
         echo "<td>" . "Rp " . number_format($row['jumlah'], 0, ",", ".") . "</td>";
     }
