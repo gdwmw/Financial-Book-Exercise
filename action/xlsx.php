@@ -13,7 +13,7 @@ global $conn;
 $query = "SELECT * FROM bulanan";
 $result = mysqli_query($conn, $query);
 
-$bquery = "SELECT * FROM transaksi";
+$bquery = "SELECT * FROM transaksi ORDER BY tanggal ASC";
 $bresult = mysqli_query($conn, $bquery);
 
 // Create a new Spreadsheet object
